@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zayaah.co - Exquisite Jewellery Designs</title>
+    <link rel="icon" type="image/png" href="images/zayaah-favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="home">
+        <nav>
+            <div class="logo">
+                <a href="#home" aria-label="Zayaah.co Home"><img src="images/zayaah-logo.png" alt="Zayaah.co Logo"></a>
+            </div>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#why-choose-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="animate-on-scroll fade-in-down">BUY 2 GET ONE FREE</h1>
+            <p class="animate-on-scroll fade-in-up">FIND THE PERFECT ADORNMENT, FROM CLASSIC ELEGANCE TO MODERN STATEMENTS</p>
+            <a href="#products" class="btn-cta animate-on-scroll fade-in-up delay-1">UNVEIL YOUR COLLECTION</a>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="animate-on-scroll fade-in">TIMELESS BEAUTY FOR YOU</h2>
+            <div class="product-grid">
+                <div class="product-item animate-on-scroll fade-in-up delay-2">
+                    <img src="images/product-necklace-watch.jpg" alt="Vintage Y2K Watch Choker" loading="lazy">
+                    <h3>Vintage Y2K Watch Choker</h3>
+                    <p>This gender-neutral necklace offers a perfect blend of style, comfort, and resilience. Made from lightweight, waterproof stainless steel, it's an exquisite and adjustable addition to any luxury jewelry collection.</p>
+                    <a href="#" class="btn-product" aria-label="View Vintage Y2K Watch Choker product details">View Product</a>
+                </div>
+                <div class="product-item animate-on-scroll fade-in-up delay-3">
+                    <img src="images/product-dragon-ring.jpg" alt="Obsidian Ring" loading="lazy">
+                    <h3>Obsidian Ring</h3>
+                    <p>Introducing the Obsidian Ring – a bold, mythical masterpiece that wraps your finger in the awe-inspiring spirit of dragons.</p>
+                    <a href="#" class="btn-product" aria-label="View Obsidian Ring product details">View Product</a>
+                </div>
+                <div class="product-item animate-on-scroll fade-in-up delay-4">
+                    <img src="images/product-aurora-necklace.jpg" alt="The Aurora Necklace" loading="lazy">
+                    <h3>The Aurora Necklace</h3>
+                    <p>This stunning necklace boasts a captivating array of multicolored gems, drawing inspiration from the vibrant hues of the aurora. Crafted from lightweight and comfortable titanium, it's resistant to corrosion and tarnish, ensuring lasting brilliance.</p>
+                    <a href="#" class="btn-product" aria-label="View The Aurora Necklace product details">View Product</a>
+                </div>
+            </div>
+            <a href="#" class="btn-secondary animate-on-scroll fade-in delay-5">THE ELITE AESTHETIC REALM</a>
+        </div>
+    </section>
+
+    <section id="why-choose-us" class="why-choose-us-section">
+        <div class="container">
+            <h2 class="animate-on-scroll fade-in">Ordinary was never an option</h2>
+            <div class="features-grid">
+                <div class="feature-item animate-on-scroll fade-in-up delay-1">
+                    <i class="fas fa-gem icon"></i>
+                    <h3>Crafted to Captivate</h3>
+                    <p>Each piece is meticulously handcrafted with precision and passion — blending timeless artistry with modern elegance to create jewellery that’s as unique as you are.</p>
+                </div>
+                <div class="feature-item animate-on-scroll fade-in-up delay-2">
+                    <i class="fas fa-shield-alt icon"></i>
+                    <h3>Swift & Trusted Delivery</h3>
+                    <p>Your orders race to your doorstep with speed, care, and guaranteed protection at every step.</p>
+                </div>
+                <div class="feature-item animate-on-scroll fade-in-up delay-3">
+                    <i class="fas fa-smile icon"></i>
+                    <h3>Care You Can Count On</h3>
+                    <p>We’re committed to delighting you — with personalized service, easy returns, and support that truly cares.</p>
+                </div>
+            </div>
+            <a href="#contact" class="btn-cta animate-on-scroll fade-in delay-4">Unlock the Extraordinary</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="animate-on-scroll fade-in">Break the Silence</h2>
+            <form class="contact-form animate-on-scroll fade-in-up" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Who’s Making This Move?<span class="required">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Own it. Tell us your name." required>
+                    <div class="error-message" id="nameError">Name is required.</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Direct Line<span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Where we make things happen" required>
+                    <div class="error-message" id="emailError">Please enter a valid email address.</div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Say<span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="5" placeholder="Drop your message. No holding back." required></textarea>
+                    <div class="error-message" id="messageError">Message is required.</div>
+                </div>
+                <button type="submit" class="btn-submit">Leave Your Mark</button>
+                <div class="success-message" id="successMessage">Thank you for your message! We will get back to you soon.</div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column about-us">
+                <a href="#home" aria-label="Zayaah.co Home"><img src="images/zayaah-logo.png" alt="Zayaah.co Logo"></a>
+                <p>At Zayaah.co, ordinary has no place. We forge statement jewellery for those who dare to stand apart — bold, timeless, and unapologetically extraordinary.</p>
+            </div>
+            <div class="footer-column quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home of Icons</a></li>
+                    <li><a href="#products">Curation of the Bold</a></li>
+                    <li><a href="#why-choose-us">What Sets Us Apart</a></li>
+                    <li><a href="#contact">Start Your Story</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact-info">
+                <h3>Get In Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> SHOP NO 42 , BAGPAT ROAD ,CIVIL LINE MUZAFFARNAGAR(248007)</p>
+                <p><i class="fas fa-phone-alt"></i> +91 7351690584</p>
+                <p><i class="fas fa-envelope"></i> support@zayaah.co</p>
+            </div>
+            <div class="footer-column social-media">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/zayaah.co?utm_source=ig_web_button_share_sheet&igsh=a2YyN2d4ZjhxMjRx" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://github.com/DEVVRAT-HUB" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/dev-pundir-b65238242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.reddit.com/u/Spidermon-/s/IDmBmQ1Zwq" aria-label="Reddit" target="_blank" rel="noopener noreferrer"><i class="fab fa-reddit-alien"></i></a>
+                </div>
+            </div>
+            <div class="footer-column newsletter-signup">
+                <h3>Join the Inner Circle</h3>
+                <p>Be first to discover bold designs, elite offers, and the story behind every statement piece.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your digital key to exclusivity">
+                    <button type="submit">Unlock Access</button>
+                </div>
+            </div>
+        </div>
+        <p class="copyright-text">&copy; <span id="current-year"></span> Zayaah.co — Crafted for the extraordinary. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
