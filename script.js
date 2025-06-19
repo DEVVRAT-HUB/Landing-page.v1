@@ -12,9 +12,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Sticky Header (Bonus)
 const header = document.querySelector('header');
 const heroSection = document.querySelector('.hero');
-const headerHeight = header.offsetHeight;
+const headerHeight = header.offsetHeight; // Get initial height
 
 function handleScroll() {
+    // Check if the sticky class is not already present to avoid re-calculating offsetHeight unnecessarily
+    // Or, more robustly, calculate the scroll threshold based on heroSection height and header height
     if (window.scrollY > heroSection.offsetHeight - headerHeight) { // Adjust threshold as needed
         header.classList.add('sticky');
     } else {
@@ -45,56 +47,62 @@ const contactForm = document.querySelector('.contact-form');
 contactForm.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
-    // In a real application, you would send this data to a server.
-    // For this task, a simple alert or console log is sufficient.
+    // In a real application, you would send this data to a server
+    // For now, we'll just log it and provide a simple alert
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    console.log('Form Submitted!');
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
+    console.log('Form Submitted:', { name, email, message });
+    alert('Thank you for your message! We will get back to you soon.');
 
-    alert('Thank you for your message, ' + name + '! We will get back to you shortly.');
-
-    // Optionally, clear the form fields
+    // Clear the form fields
     contactForm.reset();
 });
+
+// Current Year for Footer
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+
+// Hamburger Menu Toggle for Mobile
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const navLinks = document.querySelector('.nav-links');
+
+hamburgerMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Close mobile nav when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+        }
+    });
+});
+
 
 // Optional: Scroll Animations for other sections (Example)
 // You would typically use an Intersection Observer API for more robust scroll animations
 // For this task, a simple check on scroll might suffice for bonus points.
 
-function checkVisibility() {
-    const sections = document.querySelectorAll('section'); // Select all sections
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
+const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
-        if (sectionTop < windowHeight * 0.75) { // When 25% of section is visible
-            section.classList.add('fade-in'); // Add a class for animation
+const observerOptions = {
+    root: null, // viewport
+    rootMargin: '0px',
+    threshold: 0.1 // 10% of the element must be visible
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Stop observing once animated
         }
     });
-}
+}, observerOptions);
 
-window.addEventListener('scroll', checkVisibility);
-// Call once on load in case sections are already visible
-checkVisibility();
-
-/* Add this to style.css for the fade-in animation: */
-/*
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.active { // Add this class with JS when it enters viewport
-    opacity: 1;
-    transform: translateY(0);
-}
-*/
-// You'd need to adjust the JS to add/remove 'active' class on intersection.
-// For a simple intern task, just adding 'fade-in' and setting its default state hidden then animating to visible might be enough.
-// A more robust solution uses Intersection Observer, but for 2-3 days, keep it simpler if time is tight.
+animatedElements.forEach(element => {
+    observer.observe(element);
+});
